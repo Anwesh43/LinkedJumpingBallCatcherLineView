@@ -205,4 +205,13 @@ class JumpingBallCatcherLineView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity: Activity) : JumpingBallCatcherLineView {
+            val view : JumpingBallCatcherLineView = JumpingBallCatcherLineView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
