@@ -15,7 +15,7 @@ import android.content.Context
 val nodes : Int = 5
 val lines : Int = 2
 val parts : Int = 3
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.03f / parts
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 7.8f
 val colors : Array<String> = arrayOf("#673AB7", "#4CAF50", "#F44336", "#3F51B5", "#009688")
@@ -34,9 +34,9 @@ fun Canvas.drawJumpingBallCatcherLine(scale : Float, w : Float, h : Float, paint
     val sf2 : Float = sf.divideScale(1, parts)
     save()
     translate(0f, h / 2)
-    drawCircle(0f, -ballSize + h * sf2, ballSize, paint)
+    drawCircle(w / 2,  -h / 2 - ballSize + (h / 2) * sf2, ballSize, paint)
     for (j in 0..(lines - 1)) {
-        val x1 : Float = w / 2 * (1 + sf1) * j
+        val x1 : Float = w / 2 * (2 - sf1) * j
         val x2 : Float = w * j + (1 - j) * sf1 * (w / 2)
         drawLine(x1, 0f, x2, 0f, paint)
     }
